@@ -1,4 +1,7 @@
-# Write your self a REACT
+<p align="center">
+  <img src="./banner.png" alt="banner" width="100%">
+<p>
+
 - Of course it is simplified, but the most basic stuffs are there...
 - To be updated/developed incrementally, just for the fun.
 
