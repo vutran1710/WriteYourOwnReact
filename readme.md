@@ -47,6 +47,7 @@
 - [x] Updating works! (replacing tree or updating individual nodes)
 - [x] Optimization with fiber reconciliation - not perfect, but generally it works.
 - [x] JSX ready!
+- [ ] Life-cycle hooks
 
 ## Running
 - clone the repo & cd into it
