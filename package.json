@@ -4,12 +4,14 @@
   "description": "trying stuffs with dom",
   "scripts": {
     "start": "ts-node fuse.ts",
+    "pretty": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vutr",
   "license": "MIT",
   "devDependencies": {
     "fuse-box": "^4.0.1-next.4",
+    "prettier": "^2.3.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }
