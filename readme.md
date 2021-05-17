@@ -140,5 +140,5 @@ class App extends React.Component {
 And finally render it to a DOM node.
 
 ```typescript
-React.RenderDOM(DynamicApp, "#container-id")
+React.RenderDOM(App, "#container-id")
 ```
