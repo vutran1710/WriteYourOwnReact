@@ -5,11 +5,15 @@
   "scripts": {
     "start": "ts-node fuse.ts",
     "pretty": "prettier --write .",
+    "lint": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "vutr",
   "license": "MIT",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "eslint": "^7.26.0",
     "fuse-box": "^4.0.1-next.4",
     "prettier": "^2.3.0",
     "ts-node": "^9.1.1",
