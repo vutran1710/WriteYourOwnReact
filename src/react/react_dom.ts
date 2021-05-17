@@ -1,18 +1,24 @@
 import { FiberNode } from "./fiber"
+import { Component } from "./react_class_component"
 
-export const RenderDOM = (app: any, container: string) => {
+type IsFC = FC & { _is_class: false }
+type IsReactClass = Constructor<Component> & { _is_class: true }
+
+export const RenderDOM = (
+  app: IsFC | IsReactClass,
+  container: string
+): void => {
   const appContainerNode = document.querySelector(container)
-
-  let renderedApp: any
+  const FiberRoot = new FiberNode(appContainerNode)
 
   if (app._is_class) {
     const initialized = new app()
-    renderedApp = initialized.initialRender.bind(initialized)
+    const renderer = initialized.initialRender.bind(
+      initialized
+    ) as () => FiberNode
+    FiberRoot.appendFiberChild(renderer())
   } else {
-    renderedApp = app
+    const renderedApp = app as FC
+    FiberRoot.appendFiberChild(renderedApp())
   }
-
-  const fiber: FiberNode = renderedApp()
-  fiber.parent = new FiberNode(appContainerNode)
-  appContainerNode.appendChild(fiber.el)
 }

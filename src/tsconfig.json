@@ -2,7 +2,7 @@
   "baseDir": ".",
   "compilerOptions": {
     "target": "ES6",
-    "jsx": "react"
-  },
-  "file": ["types.d.ts"]
+    "jsx": "react",
+    "moduleResolution": "node"
+  }
 }

@@ -4,15 +4,15 @@ import { reconcile } from "./vdom"
 export abstract class Component {
   // TODO: add more life-cycle hooks for class-componennts
   static _is_class = true
-  state = {}
+  state: State = {}
   props: Props = {}
   node: FiberNode
 
-  constructor(props: Props) {
+  constructor(props: Props = {}) {
     this.props = props
   }
 
-  setState(newState: object = {}) {
+  setState(newState: State = {}): void {
     this.state = { ...this.state, ...newState }
     const node = reconcile(this)
     this.node = node

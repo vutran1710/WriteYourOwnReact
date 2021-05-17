@@ -1,9 +1,8 @@
 import "./style.css"
 import * as React from "./react"
-import { DOMcreateElement } from "./helpers"
 
 // DYNAMIC-APP that updates & remove =============================
-const Button = (props: { onClick: EventHandler; text: string }) => {
+const Button = (props: { onClick: React.EventHandler; text: string }) => {
   /* return React.createElement(
    *   'button',
    *   { onClick: props.onClick },
@@ -50,22 +49,22 @@ const SubHeading = (props: { currentCount: number }) => {
 class DynamicApp extends React.Component {
   state: { count: number }
 
-  constructor(props: any) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       count: 1,
     }
   }
 
-  handleOnClick = () => {
+  handleOnClick = (): void => {
     this.setState({ count: this.state.count + 1 })
   }
 
-  reset = () => {
+  reset = (): void => {
     this.setState({ count: 0 })
   }
 
-  render() {
+  render(): React.Fiber {
     /* return React.createElement(
      *   'div',
      *   { className: 'example-dynamic-app' },

@@ -5,8 +5,6 @@ import { FiberNode } from "./fiber"
  */
 
 // NOTE: define Functional Component Type (FC)
-export type FC = (props: Props) => FiberNode
-
 export const createElement = (
   tag: string | FC,
   props: Props = {},

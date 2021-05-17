@@ -1,6 +1,6 @@
 import { SupportedSyntheticEvents } from "./constants"
 
-export class FiberNode {
+export class FiberNode implements FiberNode {
   el: HTMLElement | Node
 
   tag: string
@@ -15,7 +15,7 @@ export class FiberNode {
     this.tag = el.nodeName
   }
 
-  setProps(newProps: Props) {
+  setProps(newProps: Props): void {
     this.props = { ...newProps }
     Object.assign(this.el, this.props)
     Object.keys(this.props)
@@ -26,13 +26,13 @@ export class FiberNode {
       })
   }
 
-  appendFiberChild(child: FiberNode) {
+  appendFiberChild(child: FiberNode): void {
     this.children.push(child)
     this.el.appendChild(child.el)
     child.parent = this
   }
 
-  remove() {
+  remove(): void {
     this.el["remove"]()
   }
 }

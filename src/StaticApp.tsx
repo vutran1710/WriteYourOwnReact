@@ -1,7 +1,7 @@
 import * as React from "./react"
 
 // STATIC-APP that does not update ================================
-const StaticApp = () => {
+const StaticApp: React.FC = () => {
   /* return React.createElement(
    *   'div', { className: 'example-static-app' },
    *   'This is my Static App',
