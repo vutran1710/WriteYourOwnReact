@@ -2,29 +2,16 @@
   <img src="./banner.png" alt="banner" width="100%">
 <p>
 
-- Of course it is simplified, but the most basic stuffs are there...
-- To be updated/developed incrementally, just for the fun.
-
 ## Why?
 
 1. You will always learn much better when you Do-It-Yourself!
 2. Fun
 3. Provide a statement: **You Know React**
 
-## Architecture briefing
-
-- VDOM is a tree of fiber-nodes
-- Text-Node should be a fiber-node as well
-- createElement should return a fiber-node
-- after `setState`, render a new sub-tree of fiber-nodes and process to `diffing`
-- `diffing` algorithm is a recursive run down both trees from the stateful root-node
-- during diffing, swap tree happen when tag is different, or when children structure change
-- when structure remains the same, but attributes change then update corresponding nodes only
-
 ## What?
-Based on the above assumtion about Architecture, you will have...
+What you are having is...
 
-- Write yourself a tiny _React_, with 2 basic API: **createElement** & **RenderDOM**
+- A tiny _React_, with 2 basic API: **createElement** & **RenderDOM**
 - Create 2 **Apps**, one _static_ and one _dynamic_ (meaning it can update/delete)
 - Using **RenderDOM** mount the 2 apps to two different nodes on the DOM
 - The DOM tree after rendering would look like this:
@@ -58,6 +45,16 @@ Based on the above assumtion about Architecture, you will have...
 </body>
 ```
 
+## Architecture brief
+To achieve the target mention above, the generall architecture of your React would consists of
+- A VDOM is a tree of fiber-nodes
+- Text-Node should be a fiber-node as well
+- createElement should return a fiber-node
+- after `setState`, render a new sub-tree of fiber-nodes and process to `diffing`
+- `diffing` algorithm is a recursive run down both trees from the stateful root-node
+- during `diffing`, *Tree-Swap* happen when a component's tag has changed, or when a component's children-structure changed
+- when structure remains the same, but attributes change then only update the corresponding nodes
+
 ## Project status
 
 - [x] Rendering works!
@@ -68,14 +65,13 @@ Based on the above assumtion about Architecture, you will have...
 - [ ] Better optimized `diffing` algorithm (reserved for studying)
 - [ ] Hooks (reserved for studying)
 
-- You can search in project for all `TODO` notes to know what needs to do to further enhance your **React**
-- Currently only support 'onClick' events. You can add more events yourself
 
 ## Learning instruction
-- Learn to implement `hooks` and `component-life-cycle method` (before-mount, did-update, memoize etc)
-- Learn to optimize `diffing` algorithm (ref to [official doc of React about `reconciliation`](https://reactjs.org/docs/reconciliation.html))
+- You can search in project for all `TODO` notes to know what needs to do to further enhance your **React**
+- You can learn and try to implement `hooks` and `component-life-cycle method` (before-mount, did-update, memoize etc)
+- Try to optimize `diffing` algorithm (ref to [official doc of React about `reconciliation`](https://reactjs.org/docs/reconciliation.html))
 - Add more supported-events for your React
--
+
 
 ## Running
 
@@ -89,7 +85,7 @@ Based on the above assumtion about Architecture, you will have...
   <img src="./ss.png" alt="Screenshot" width="600">
 <p>
 
-Using this `Hanoian` React, you can write your app something like...
+Using this home-made React, you can write your app something like...
 
 ```javascript
 const Button = (props: { onClick: EventHandler, text: string }) => {
@@ -139,6 +135,10 @@ class App extends React.Component {
     )
   }
 }
+```
 
+And finally render it to a DOM node.
+
+```typescript
 React.RenderDOM(DynamicApp, "#container-id")
 ```
