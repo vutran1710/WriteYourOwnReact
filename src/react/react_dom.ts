@@ -13,12 +13,11 @@ export const RenderDOM = (
 
   if (app._is_class) {
     const initialized = new app()
-    const renderer = initialized.initialRender.bind(
-      initialized
-    ) as () => FiberNode
-    FiberRoot.appendFiberChild(renderer())
+    const renderer = initialized.initialRender.bind(initialized)
+    const node = renderer() as FiberNode
+    FiberRoot.appendFiberChild(node)
   } else {
-    const renderedApp = app as FC
-    FiberRoot.appendFiberChild(renderedApp())
+    const node = (app as FC)()
+    FiberRoot.appendFiberChild(node)
   }
 }
