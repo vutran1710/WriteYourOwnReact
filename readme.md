@@ -7,12 +7,24 @@
 
 ## Why?
 
-1. If you can't create it, you don't understand it.
-2. Proving that nothing is impossible to do with **Vutran** LOL
+1. You will always learn much better when you Do-It-Yourself!
+2. Fun
+3. Provide a statement: **You Know React**
+
+## Architecture briefing
+
+- VDOM is a tree of fiber-nodes
+- Text-Node should be a fiber-node as well
+- createElement should return a fiber-node
+- after `setState`, render a new sub-tree of fiber-nodes and process to `diffing`
+- `diffing` algorithm is a recursive run down both trees from the stateful root-node
+- during diffing, swap tree happen when tag is different, or when children structure change
+- when structure remains the same, but attributes change then update corresponding nodes only
 
 ## What?
+Based on the above assumtion about Architecture, you will have...
 
-- Write a simplified _React-like_ script, with 2 basic API: **createElement** & **RenderDOM**
+- Write yourself a tiny _React_, with 2 basic API: **createElement** & **RenderDOM**
 - Create 2 **Apps**, one _static_ and one _dynamic_ (meaning it can update/delete)
 - Using **RenderDOM** mount the 2 apps to two different nodes on the DOM
 - The DOM tree after rendering would look like this:
@@ -50,15 +62,21 @@
 
 - [x] Rendering works!
 - [x] Updating works! (replacing tree or updating individual nodes)
-- [x] Optimization with fiber reconciliation - not perfect, but generally it works.
+- [x] Fiber reconciliation - not perfect, but generally it works.
 - [x] JSX ready!
-- [ ] Life-cycle hooks
+- [ ] Class Component Life-cycle Methods (reserved for studying)
+- [ ] Better optimized `diffing` algorithm (reserved for studying)
+- [ ] Hooks (reserved for studying)
+
+- You can search in project for all `TODO` notes to know what needs to do to further enhance your **React**
+- Currently only support 'onClick' events. You can add more events yourself
+
 
 ## Running
 
 - clone the repo & cd into it
 - `npm i` and `npm start`
-- [Localhosted-App](http://localhost:4444)
+- [local-hosted-App at :4444](http://localhost:4444)
 
 ## Screenshot
 
@@ -119,13 +137,3 @@ class App extends React.Component {
 
 React.RenderDOM(DynamicApp, "#container-id")
 ```
-
-## Architecture description
-
-- VDOM is a tree of fiber-nodes
-- Text-Node should be a fiber-node as well
-- createElement should return a fiber-node
-- after `setState`, render a new sub-tree of fiber-nodes and process to `diffing`
-- `diffing` algorithm is a recursive run down both trees from the stateful root-node
-- during diffing, swap tree happen when tag is different, or when children structure change
-- when structure remains the same, but attributes change then update corresponding nodes only
