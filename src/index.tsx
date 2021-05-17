@@ -1,8 +1,7 @@
 import "./style.css"
 import * as React from "./react"
-import DynamicApp from './DynamicApp'
-import StaticApp from './StaticApp'
-
+import DynamicApp from "./DynamicApp"
+import StaticApp from "./StaticApp"
 
 const DOMcreateElement = (tag: string, attrs = {}): Node => {
   const elm = document.createElement(tag)
@@ -20,5 +19,5 @@ body.appendChild(DOMcreateElement("div", { id: "dynamic-app" }))
 /*
  * Mounting Apps
  */
-React.RenderDOM(StaticApp, '#static-app')
+React.RenderDOM(StaticApp, "#static-app")
 React.RenderDOM(DynamicApp, "#dynamic-app")

@@ -1,6 +1,5 @@
 import { FiberNode } from "./fiber"
 
-
 export const RenderDOM = (app: any, container: string) => {
   const appContainerNode = document.querySelector(container)
 

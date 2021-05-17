@@ -1,7 +1,6 @@
 import { FiberNode } from "./fiber"
 import { reconcile } from "./vdom"
 
-
 export abstract class Component {
   static _is_class = true
   state = {}

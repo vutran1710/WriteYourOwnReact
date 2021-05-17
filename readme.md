@@ -121,6 +121,7 @@ React.RenderDOM(DynamicApp, "#container-id")
 ```
 
 ## Architecture description
+
 - VDOM is a tree of fiber-nodes
 - Text-Node should be a fiber-node as well
 - createElement should return a fiber-node

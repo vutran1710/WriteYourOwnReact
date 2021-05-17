@@ -2,7 +2,6 @@ import "./style.css"
 import * as React from "./react"
 import { DOMcreateElement } from "./helpers"
 
-
 // DYNAMIC-APP that updates & remove =============================
 const Button = (props: { onClick: EventHandler; text: string }) => {
   /* return React.createElement(

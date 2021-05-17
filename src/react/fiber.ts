@@ -1,6 +1,5 @@
 import { SupportedSyntheticEvents } from "./constants"
 
-
 export class FiberNode {
   el: HTMLElement | Node
 

@@ -1,7 +1,6 @@
 import { FiberNode } from "./fiber"
 import { Component } from "./react_class_component"
 
-
 export const shallowCompare = (p: object, q: object): boolean => {
   const pkeys = Object.keys(p)
   const qkeys = Object.keys(q)
