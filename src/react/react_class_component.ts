@@ -2,6 +2,7 @@ import { FiberNode } from "./fiber"
 import { reconcile } from "./vdom"
 
 export abstract class Component {
+  // TODO: add more life-cycle hooks for class-componennts
   static _is_class = true
   state = {}
   props: Props = {}

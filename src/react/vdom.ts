@@ -11,6 +11,9 @@ export const shallowCompare = (p: object, q: object): boolean => {
 }
 
 export const reconcile = (comp: Component): FiberNode => {
+  // TODO: updating tree should be a batch-update
+  // to avoid blocking when rendering heavy tree or
+  // grouping multiple diffing into one update
   const newTree = comp.render()
   const currentTree = comp.node
   const node = diffing(newTree, currentTree, currentTree)
