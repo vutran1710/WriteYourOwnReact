@@ -71,6 +71,11 @@ Based on the above assumtion about Architecture, you will have...
 - You can search in project for all `TODO` notes to know what needs to do to further enhance your **React**
 - Currently only support 'onClick' events. You can add more events yourself
 
+## Learning instruction
+- Learn to implement `hooks` and `component-life-cycle method` (before-mount, did-update, memoize etc)
+- Learn to optimize `diffing` algorithm (ref to [official doc of React about `reconciliation`](https://reactjs.org/docs/reconciliation.html))
+- Add more supported-events for your React
+-
 
 ## Running
 
