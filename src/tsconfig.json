@@ -4,7 +4,5 @@
     "target": "ES6",
     "jsx": "react"
   },
-  "file": [
-    "types.d.ts"
-  ]
+  "file": ["types.d.ts"]
 }

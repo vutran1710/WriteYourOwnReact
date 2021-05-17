@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
 body {
   background: #f7fcfd;
   margin: 0 auto;
   max-width: 500px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 * {
@@ -35,11 +35,11 @@ button {
   border: none;
   color: #555;
   cursor: pointer;
-  transition: opacity .3s;
-  opacity: .8;
+  transition: opacity 0.3s;
+  opacity: 0.8;
   margin-right: 20px;
 }
 
 button:hover {
-    opacity: 1;
+  opacity: 1;
 }
