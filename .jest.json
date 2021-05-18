@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "bail": 1,
+  "testMatch": [ "**/tests/**/*.[jt]s?(x)"]
+}
